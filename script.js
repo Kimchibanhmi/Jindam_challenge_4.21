@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let currentLevels = [];
   let completedSentences = 0;
   let timer;
-  let timeRemaining = 20;
+  let timeRemaining = 30;
   let selectedCards = [];
 
   // Day 버튼 생성
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function () {
       clearInterval(timer);
     }
 
-    timeRemaining = 20;
+    timeRemaining = 30;
     timeLeft.textContent = timeRemaining;
 
     timer = setInterval(function () {
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
       clearInterval(timer);
       timer = null;
     }
-    timeRemaining = 20;
+    timeRemaining = 30;
     timeLeft.textContent = timeRemaining;
   }
 
