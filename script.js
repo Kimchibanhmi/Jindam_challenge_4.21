@@ -510,3 +510,16 @@ document.addEventListener('DOMContentLoaded', function () {
     resultMessage.style.display = 'none';
   }
 });
+
+
+  // 모든 버튼 업데이트
+  setTimeout(() => {
+    const buttons = document.querySelectorAll('.day-buttons button');
+    buttons.forEach((button) => {
+      button.disabled = false;
+      button.classList.add('unlocked');
+    });
+    console.log('모든 Day 버튼이 활성화되었습니다.');
+  }, 500);
+});
+
