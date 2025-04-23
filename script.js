@@ -521,7 +521,7 @@ document.addEventListener('DOMContentLoaded', function () {
     buttons.forEach((button) => {
       button.disabled = false;
       button.classList.add('unlocked');
-    });
+  });
     console.log('모든 Day 버튼이 활성화되었습니다.');
   }, 500);
 });
