@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let currentLevels = [];
   let completedSentences = 0;
   let timer;
-  let timeRemaining = 30;
+  let timeRemaining = 20;
   let selectedCards = [];
 
   // Day 버튼 생성
@@ -509,10 +509,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // 메시지 요소 참조 제거하거나 비활성화
     resultMessage.style.display = 'none';
   }
-});
 
+  // 모든 Day 잠금 해제 및 버튼 활성화
+  for (let i = 1; i <= 10; i++) {
+    localStorage.setItem(`dayUnlocked_${i}`, 'true');
+  }
 
-  // 모든 버튼 업데이트
+  // 모든 버튼 업데이트 519-527 삭제
   setTimeout(() => {
     const buttons = document.querySelectorAll('.day-buttons button');
     buttons.forEach((button) => {
@@ -522,4 +525,3 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('모든 Day 버튼이 활성화되었습니다.');
   }, 500);
 });
-
