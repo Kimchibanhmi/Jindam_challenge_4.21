@@ -521,7 +521,29 @@ document.addEventListener('DOMContentLoaded', function () {
     buttons.forEach((button) => {
       button.disabled = false;
       button.classList.add('unlocked');
-  });
+    });
     console.log('모든 Day 버튼이 활성화되었습니다.');
   }, 500);
 });
+
+function unlockAllDays() {
+  for (let i = 1; i <= 10; i++) {
+    localStorage.setItem(`dayUnlocked_${i}`, 'true');
+  }
+  console.log('모든 Day가 잠금 해제되었습니다.');
+}
+
+// 페이지 로드 후 실행
+window.onload = function () {
+  unlockAllDays();
+  // 0.5초 후에 버튼 시각적 업데이트
+  setTimeout(function () {
+    const buttons = document.querySelectorAll('.day-buttons button');
+    if (buttons.length > 0) {
+      buttons.forEach((button) => {
+        button.disabled = false;
+        button.classList.add('unlocked');
+      });
+    }
+  }, 500);
+};
